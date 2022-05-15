@@ -1,5 +1,6 @@
 
 const fast2sms=require('fast-two-sms');
+const nodemailer=require('nodemailer');
 
 const user=require('../models/usermodel')
 
@@ -15,22 +16,34 @@ let otp=generateRandomNumber();
 
 const login_otp=(req,res)=>{
     var number=req.body.number;
+    var mail=req.body.mail
 
    
-    var options={
-        authorization:"nw7AVTbWYCyKsLBgI6fh0murO4l3iavdtXez8Jcqx1N5R2ZFjEL2KJWHjcRIwtZGiMlF9U0kNvsB6xfm",
-        message:otp,
-        numbers:[number]
-    }
-    fast2sms.sendMessage(options)
-     .then((response)=>{
-        console.log(response);
-       
-      
-      })
-     .catch((error)=>{
-     console.log(error);
-     });
+    // 
+    var transport=nodemailer.createTransport(
+        {
+            service: 'gmail',
+               auth: {
+                user: 'sravanthvasuki@gmail.com',
+                 pass: 'Sravan#2611'
+               }
+        }
+    );
+    
+    var mailOptions={
+        from:'sravanthvasuki@gmail.com',
+        to:mail,
+        subject:'CREDENTIAL',
+        text:`Hello ${otp}. Thank you`
+    
+    };
+    transport.sendMail(mailOptions,function(error,info){
+        if(error){
+            console.log(error)
+        } else{
+            console.log('email sent'+info.response);
+        }
+    });
      const newuser=new user({
             phonenumber:number,
             email:req.body.mail
