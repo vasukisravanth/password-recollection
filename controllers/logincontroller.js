@@ -34,7 +34,7 @@ const login_otp=(req,res)=>{
         from:'sravanthvasuki@gmail.com',
         to:mail,
         subject:'CREDENTIAL',
-        text:`Hello ${otp}. Thank you`
+        text:`Greetings,your OTP for password-recollections is ${otp}. Thank you`
     
     };
     transport.sendMail(mailOptions,function(error,info){
