@@ -23,6 +23,9 @@ userinfo.findOne({userin:unum,account:accname},function(err,result){
 console.log("upd?");
 }
 
+
+
+
 module.exports={
     edit_page,
     edit_value

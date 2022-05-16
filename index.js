@@ -12,7 +12,8 @@ const loginroutes=require('./routes/loginroutes');
 const tokenroutes=require('./routes/tokenroutes');
 const userinforoutes=require('./routes/userinforoutes');
 const usersearchroutes=require('./routes/usersearchroutes');
-const editroutes=require('./routes/editroutes')
+const editroutes=require('./routes/editroutes');
+const logoutroutes=require('./routes/logoutroutes');
 const res = require('express/lib/response');
 
 
@@ -36,6 +37,7 @@ app.use(tokenroutes);
 app.use(userinforoutes);
 app.use(usersearchroutes);
 app.use(editroutes);
+app.use(logoutroutes);
 
 
 // function myFunction(){

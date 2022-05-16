@@ -7,4 +7,5 @@ const editcontroller=require('../controllers/editcontroller');
 router.post('/edit/:user',editcontroller.edit_page);
 router.post('/editinput/:usern',editcontroller.edit_value)
 
+
 module.exports = router;

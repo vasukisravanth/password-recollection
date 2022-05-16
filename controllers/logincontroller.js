@@ -14,6 +14,7 @@ function generateRandomNumber() {
 
 let otp=generateRandomNumber();
 
+
 const login_otp=(req,res)=>{
     var number=req.body.number;
     var mail=req.body.mail
@@ -74,4 +75,5 @@ const login_otp=(req,res)=>{
         });
 }
 module.exports=login_otp;
+
 module.exports.otp=otp;
