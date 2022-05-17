@@ -21,6 +21,8 @@ userinfo.findOne({userin:unum,account:accname},function(err,result){
     console.log(result);
 })
 console.log("upd?");
+var linl=`/user/${unum}`;
+res.redirect(linl);
 }
 
 

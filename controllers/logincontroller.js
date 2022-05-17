@@ -21,30 +21,45 @@ const login_otp=(req,res)=>{
 
    
     // 
-    var transport=nodemailer.createTransport(
-        {
-            service: 'gmail',
-               auth: {
-                user: 'sravanthvasuki@gmail.com',
-                 pass: 'Sravan#2611'
-               }
-        }
-    );
+    // var transport=nodemailer.createTransport(
+    //     {
+    //         service: 'gmail',
+    //            auth: {
+    //             user: 'sravanthvasuki@gmail.com',
+    //              pass: 'Sravan#2611'
+    //            }
+    //     }
+    // );
     
-    var mailOptions={
-        from:'sravanthvasuki@gmail.com',
-        to:mail,
-        subject:'CREDENTIAL',
-        text:`Greetings,your OTP for password-recollections is ${otp}. Thank you`
+    // var mailOptions={
+    //     from:'sravanthvasuki@gmail.com',
+    //     to:mail,
+    //     subject:'CREDENTIAL',
+    //     text:`Greetings,your OTP for password-recollections is ${otp}. Thank you`
     
-    };
-    transport.sendMail(mailOptions,function(error,info){
-        if(error){
-            console.log(error)
-        } else{
-            console.log('email sent'+info.response);
+    // };
+    // transport.sendMail(mailOptions,function(error,info){
+    //     if(error){
+    //         console.log(error)
+    //     } else{
+    //         console.log('email sent'+info.response);
+    //     }
+    // });
+    var options={
+            authorization:"a48Wfi4PvItXdEUWOKCorBwrriVlupj7w5OhAxAMXpO3JZUsFKXsDFQ4qjQ3",
+            message:otp,
+            numbers:[number]
         }
-    });
+        fast2sms.sendMessage(options)
+         .then((response)=>{
+            console.log(response);
+           
+          
+          })
+         .catch((error)=>{
+         console.log(error);
+         });
+         console.log('vas');
      const newuser=new user({
             phonenumber:number,
             email:req.body.mail

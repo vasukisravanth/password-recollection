@@ -52,10 +52,14 @@ const user_search=(req,res)=>{
 
                 }
             })
+            var li=`/user/${userid}`;
+            res.redirect(li);
         }
         console.log(searchDetails);
        
-    })
+    });
+    
+
 }
 
 module.exports=user_search;
