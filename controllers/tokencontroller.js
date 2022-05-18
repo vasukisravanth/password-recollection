@@ -1,6 +1,7 @@
 
 const loginroutecontroller=require('./logincontroller');
 const otp=loginroutecontroller.otp;
+
 //const isAuth=loginroutecontroller.isAuth;
 
 // const isAuth=(req,res,next)=>{
@@ -26,6 +27,7 @@ const token_ver=(req,res)=>{
     if(token==otp)
     {
         //req.session.isAuth=true;
+        
         res.redirect(`user/${unum}`);
         console.log(currentuser[0]);
     }
@@ -39,5 +41,6 @@ const token_ver=(req,res)=>{
 module.exports={
     token_number,
     token_ver,
+    
     
 }

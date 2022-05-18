@@ -6,6 +6,11 @@ const edit_page=(req,res)=>{
 console.log(unum);
     res.render('edit',{usern:unum});
 }
+const back=(req,res)=>{
+    var unu=req.params.userni;
+    var linl=`/user/${unu}`;
+    res.redirect(linl);
+}
 const edit_value=(req,res)=>{
 var unum=req.params.usern;
 console.log(unum);
@@ -30,5 +35,6 @@ res.redirect(linl);
 
 module.exports={
     edit_page,
-    edit_value
+    edit_value,
+    back
 }
