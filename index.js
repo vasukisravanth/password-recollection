@@ -14,6 +14,7 @@ const userinforoutes=require('./routes/userinforoutes');
 const usersearchroutes=require('./routes/usersearchroutes');
 const editroutes=require('./routes/editroutes');
 const logoutroutes=require('./routes/logoutroutes');
+const questionroutes=require('./routes/questionroutes');
 const res = require('express/lib/response');
 
 
@@ -25,6 +26,12 @@ app.set('view engine','ejs');
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(express.static("public"));
 
+// app.use(session({
+//     secret:secret,
+//     resave:false,
+//     saveUninitialized:false
+
+// }));
 
 app.get('/',function(req,res){
     res.render('login');
@@ -38,6 +45,7 @@ app.use(userinforoutes);
 app.use(usersearchroutes);
 app.use(editroutes);
 app.use(logoutroutes);
+app.use(questionroutes);
 
 
 // function myFunction(){

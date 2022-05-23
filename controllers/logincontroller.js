@@ -76,11 +76,12 @@ const login_otp=(req,res)=>{
                         }
                         else{
                             console.log('user added');
+                            var li=`/question/${number}`;
+                            res.redirect(li);
                         }
                     });
                    
-                //     var li=`/question/${number}`;
-                //     res.redirect(li);
+                    
                  }
                 else{
                     var link=`/token/${number}`

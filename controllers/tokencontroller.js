@@ -1,10 +1,11 @@
 
 const loginroutecontroller=require('./logincontroller');
 const otp=loginroutecontroller.otp;
+let flag;
 
 //const isAuth=loginroutecontroller.isAuth;
 
-// const isAuth=(req,res,next)=>{
+// var isAuth=(req,res,next)=>{
 //     if(req.session.isAuth){
 //         next()
 //     }else{
@@ -27,7 +28,7 @@ const token_ver=(req,res)=>{
     if(token==otp)
     {
         //req.session.isAuth=true;
-        
+        flag=true;
         res.redirect(`user/${unum}`);
         console.log(currentuser[0]);
     }
@@ -44,3 +45,4 @@ module.exports={
     
     
 }
+module.exports.flag=flag;
