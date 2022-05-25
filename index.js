@@ -15,6 +15,7 @@ const usersearchroutes=require('./routes/usersearchroutes');
 const editroutes=require('./routes/editroutes');
 const logoutroutes=require('./routes/logoutroutes');
 const questionroutes=require('./routes/questionroutes');
+const hintroutes=require('./routes/hintroutes');
 const res = require('express/lib/response');
 
 
@@ -46,7 +47,7 @@ app.use(usersearchroutes);
 app.use(editroutes);
 app.use(logoutroutes);
 app.use(questionroutes);
-
+app.use(hintroutes);
 
 // function myFunction(){
 // res.render('edit');

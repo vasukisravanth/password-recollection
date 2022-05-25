@@ -3,6 +3,7 @@ const loginroutecontroller=require('./logincontroller');
 const question=require('../models/questionmodel');
 const userquest=require('../models/userquestionmodel')
 let currentuser=[];
+let cuser=[];
 function generateRandomNumber() {
     var minm = 1;
     var maxm = 8;
@@ -14,6 +15,8 @@ let qno=generateRandomNumber();
 
 const questdisplay=(req,res)=>{
 
+    var un=req.params.number;
+    cuser.push(un);
     console.log(qno);
     question.find({number:qno},function(err,data){
         console.log(data);
@@ -26,7 +29,7 @@ const questdisplay=(req,res)=>{
 
 const answsubmit=(req,res)=>{
     var answ=req.body.answer;
-    var num=req.params.number;
+    var num=cuser[0];
     console.log(num);
     const newuser=new userquest({
         phnumber:num,

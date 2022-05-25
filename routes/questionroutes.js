@@ -6,7 +6,7 @@ const questioncontroller=require('../controllers/questioncontroller');
 
 router.get("/question/:number",questioncontroller.questdisplay);
 
-router.post('/question/question',questioncontroller.answsubmit);
+router.post('/question',questioncontroller.answsubmit);
 
 
 module.exports = router;
