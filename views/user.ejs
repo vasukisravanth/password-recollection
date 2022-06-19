@@ -1,102 +1,111 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Page</title>
 </head>
+
 <body>
-    <h1>Welcome to PR</h1>
-    <form method="post" action="/userinfo/<%=user%>">
+  <h1>Welcome to PR</h1>
+  <form method="post" action="/userinfo/<%=user%>">
     <div class="box">
-        <table class="table">
+      <table class="table">
         <thead class="table-head">
           <tr>
-            
+
             <th scope="col">Account</th>
             <th scope="col">Username</th>
             <th scope="col">Password</th>
-            
+
           </tr>
         </thead>
-    
-          <div class="item">
-                  <tbody>
-                    <tr>
-                      <td><b><input type="string" name="acc"></b></td>
-                      <td><b><input type="string" name="uid"></b></td>
-                      <td><b><input type="password" name="passw"></b></td>
-                     
-                    </tr>
-               
-                 
+
+        <div class="item">
+          <tbody>
+            <tr>
+              <td><b><input type="string" name="acc"></b></td>
+              <td><b><input type="string" name="uid"></b></td>
+              <td><b><input type="password" name="passw"></b></td>
+
+            </tr>
+
+
         </div>
-    </table>
+      </table>
     </div>
     <input type="submit" value="compose">
-</form>
-   
-<form method="post" action="/usersearch/<%=user%>">
-  <div>
-    <input type="String" name="search" placeholder="Enter the account name">
-  </div>
-  <span>
-    <input type="submit" value="find">
-  </span>
-</form>  
+  </form>
 
-    <% if(previousBookings.length==0){%>
-      <h4>OOPS!! You Have No Previous Information.</h4>
-     <% }else{%>
-     
+  <form method="post" action="/usersearch/<%=user%>">
+    <div>
+      <input type="String" name="search" placeholder="Enter the account name">
+    </div>
+    <span>
+      <input type="submit" value="find">
+    </span>
+  </form>
+
+  <% if(previousBookings.length==0){%>
+    <h4>OOPS!! You Have No Previous Information.</h4>
+    <% }else{%>
+
       <h1 id="#previousBooking" class="border heading">Your Previous Information</h1>
       <br>
       <div class="box">
         <table class="table">
-        <thead class="table-head">
-          <tr>
-            <th scope="col">#</th>
-            <th scope="col">Account</th>
-            <th scope="col">Username</th>
-            <th scope="col">Password</th>
-            
-          </tr>
-        </thead>
-      
-        <% for(var i=0;i<previousBookings.length;i++){ %>
-          <div class="item">
-                  <tbody>
-                    <tr>
-                      <th scope="row"><%=i+1%></th>
-                      <td><b><%=previousBookings[i].account%></b></td>
-                      <td><b><%=previousBookings[i].username%></b></td>
-                      <td><b>*******</b></td>
-                   
-                     
-                    </tr>
-               
-                 
-        </div>
-    <%} %>
-    </table>
-    </div>
-     <% }%>
+          <thead class="table-head">
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Account</th>
+              <th scope="col">Username</th>
+              <th scope="col">Password</th>
 
-  <form method="post" action="/edit/<%=user%>">
-     
-<input type="submit" value="edit">
+            </tr>
+          </thead>
+
+          <% for(var i=0;i<previousBookings.length;i++){ %>
+            <div class="item">
+              <tbody>
+                <tr>
+                  <th scope="row">
+                    <%=i+1%>
+                  </th>
+                  <td><b>
+                      <%=previousBookings[i].account%>
+                    </b></td>
+                  <td><b>
+                      <%=previousBookings[i].username%>
+                    </b></td>
+                  <td><b>*******</b></td>
 
 
-  </form>
+                </tr>
 
 
-<form method="post" action="/logout">
-  <div>
-    <input type="submit" value="logout">
-  </div>
+            </div>
+            <%} %>
+        </table>
+      </div>
+      <% }%>
 
-</form>
+        <form method="post" action="/edit/<%=user%>">
+
+          <input type="submit" value="edit">
+
+
+        </form>
+
+
+        <form method="post" action="/logout">
+          <div>
+            <input type="submit" value="logout">
+          </div>
+
+        </form>
 
 </body>
+
 </html>

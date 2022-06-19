@@ -1,18 +1,252 @@
-<head>
-    <link rel="stylesheet" href="style.css">
-</head>
+<!DOCTYPE html>
+<html lang="en">
+<title>Lock Your Key</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="/style.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+    integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css"
+    integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+
+<style>
+    body {
+        font-family: "Lato", sans-serif
+    }
+
+    .mySlides {
+        display: none
+    }
+</style>
+
 <body>
-    <div class="login">
-        <form method="post" action="/login">
-            <font face="Verdana">
-            <p>SIGN IN/UP</p>
-        </font>
-            <input type="tel" name="number" placeholder="NUMBER">
-            <input type="string" name="mail" placeholder="E-MAIL">
-            <input type="submit" value="ENTER">
-        </form>
+
+    <!-- Navbar -->
+    <div class="w3-top">
+        <div class="w3-bar w3-black w3-card">
+            <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right"
+                href="javascript:void(0)" onclick="myFunction()" title="Toggle Navigation Menu"><i
+                    class="fa fa-bars"></i></a>
+
+            <img class="w3-left" src="/images/resize_logo.png">
+            <a href="#" class="w3-bar-item w3-button w3-padding-large">Lock Your Key</a>
+            <a href="#" class="w3-bar-item w3-button w3-padding-large">HOME</a>
+            <a href="#about" class="w3-bar-item w3-button w3-padding-large w3-hide-small">ABOUT</a>
+            <a href="#contact" class="w3-bar-item w3-button w3-padding-large w3-hide-small">CONTACT</a>
+            <a href="#Signin" class="w3-bar-item w3-button w3-padding-large w3-right">SIGN IN/SIGN UP</a>
+        </div>
     </div>
-</body> 
+
+    <!-- Navbar on small screens (remove the onclick attribute if you want the navbar to always show on top of the content when clicking on the links) -->
+    <div id="navDemo" class="w3-bar-block w3-black w3-hide w3-hide-large w3-hide-medium w3-top" style="margin-top:46px">
+        <a href="#contact" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">CONTACT</a>
+        <a href="#about" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">ABOUT</a>
+        <a href="#Signin" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">SIGNIN</a>
+
+    </div>
+
+    <div class="w3-content" style="max-width:2000px;margin-top:46px">
+
+
+        <div class="mySlides w3-display-container w3-center">
+            <img src="/images/banner_image_1.jpg" style="width:100%">
+            <div class="w3-display-bottommiddle w3-container w3-text-white w3-padding-32 w3-hide-small">
+                <h3>Lock Your Key</h3>
+                <p><b>It holds all of your passwords and gives security to them</b></p>
+                <p><b>Creates a backup of stored data in encypted form</b></p>
+            </div>
+        </div>
+        <div class="mySlides w3-display-container w3-center">
+            <img src="/images/banner_image_2.jpeg" style="width:100%">
+            <div class="w3-display-bottommiddle w3-container w3-text-white w3-padding-32 w3-hide-small">
+                <h3>Cyber Security</h3>
+                <p><b>Cyber Criminals can easily access your financial and personal info just by guessing or stealing
+                        passwords</b></p>
+            </div>
+        </div>
+        <div class="mySlides w3-display-container w3-center">
+            <img src="/images/banner_image_3.jpg" style="width:100%">
+            <div class="w3-display-bottommiddle w3-container w3-text-white w3-padding-32 w3-hide-small">
+                <h3>Too many Online Accounts</h3>
+                <p><b>Lock your Key remember and secures your facebook, Twitter and other social networking passwords
+                    </b></p>
+            </div>
+        </div>
+
+        <div id="about" class="about-section">
+            <div class="inner-container">
+                <h1>About Us</h1>
+                <p class="text">
+                    It is necessary that people should have sole access to their accounts, after all privacy and
+                    security is the right of every user. However, one of the problems faced by most of the users
+                    worldwide is that people who are often occupied with various tasks and agendas usually tend to
+                    forget their password
+                </p>
+                <p class="text">
+                    In this system we aim at creating a website by which the user has the power and can get to enjoy the
+                    benefit of storing as well as tracking his or her passwords for all his or her accounts. The agenda
+                    and purpose behind creating such a website is to help users who prefer security and privacy of their
+                    accounts to be maintained, so that whenever he or she forgets his or her password, it can be
+                    recovered through this website.
+                </p>
+            </div>
+        </div>
+
+        <hr style="height:2px;border-width:0;color:gray;background-color:gray">
+
+        <div id="Signin" class="login">
+            <h1>SIGN IN / UP</h1>
+            <div class="form">
+                <form method="post" class="login-form" action="/login">
+                    <label for="username">
+                        <i class="fa fa-phone"></i>
+                    </label>
+                    <input type="string" name="number" placeholder="Telephone Number" id="username" required>
+                    <label for="password">
+                        <i class="fa fa-envelope"></i>
+
+                    </label>
+                    <input type="tel" name="mail" placeholder="E-mail" id="password" required>
+                    <input type="submit" value="Enter">
+                </form>
+            </div>
+        </div>
+
+
+    </div>
+    <footer id="contact" class="footer">
+        <div class="container bottom_border">
+            <div class="row">
+                <div class=" col-sm-4 col-md col-sm-4  col-6 col">
+                    <h5 class="headin5_amrc col_white_amrc pt2">Find us</h5>
+                    <p><i class="fa fa-user"></i> Vasuki Sravanth</p>
+                    <p><i class="fa fa-phone"></i> +91-7993995965</p>
+                    <p><i class="fa fa fa-envelope"></i> LockYourKeyCollection@gmail.com </p>
+
+
+                </div>
+
+                <div class=" col-sm-4 col-md col-sm-4  col-6 col">
+                    <h5 class="headin5_amrc col_white_amrc pt2">Find us</h5>
+                    <p><i class="fa fa-user"></i> Adnan Raza</p>
+                    <p><i class="fa fa-phone"></i> +91-9611966975</p>
+                    <p><i class="fa fa fa-envelope"></i> LockYourKeyCollection@gmail.com </p>
+
+
+                </div>
+
+                <div class=" col-sm-4 col-md col-sm-4  col-6 col">
+                    <h5 class="headin5_amrc col_white_amrc pt2">Find us</h5>
+                    <p><i class="fa fa-user"></i> Padala Pushkal</p>
+                    <p><i class="fa fa-phone"></i> +91-9573431158</p>
+                    <p><i class="fa fa fa-envelope"></i> LockYourKeyCollection@gmail.com </p>
+
+                </div>
 
 
 
+                <div class=" col-sm-4 col-md  col-12 col">
+                    <h5 class="headin5_amrc col_white_amrc pt2">Follow us</h5>
+                    <!--headin5_amrc ends here-->
+
+                    <ul class="footer_ul2_amrc">
+                        <li><a href="https://www.linkedin.com/in/adnan-raza-3908bb235"><i
+                                    class="fab fa-linkedin fleft padding-right"></i> </a>
+                            <p>Adnan Raza <br><a
+                                    href="https://www.linkedin.com/in/adnan-raza-3908bb235">https://www.linkedin.com/</a>
+                            </p>
+                        </li>
+                        <li><a href="https://www.linkedin.com/in/vasuki-sravanth/"><i
+                                    class="fab fa-linkedin fleft padding-right"></i> </a>
+                            <p>Vasuki Sravanth <a
+                                    href="https://www.linkedin.com/in/vasuki-sravanth/">https://www.linkedin.com/</a>
+                            </p>
+                        </li>
+                        <li><a href="https://www.linkedin.com/in/padala-pushkal/"><i
+                                    class="fab fa-linkedin fleft padding-right"></i> </a>
+                            <p>Padala Pushkal <a
+                                    href="https://www.linkedin.com/in/padala-pushkal/">https://www.linkedin.com/</a>
+                            </p>
+                        </li>
+                    </ul>
+                    <!--footer_ul2_amrc ends here-->
+                </div>
+            </div>
+        </div>
+
+
+        <div class="container">
+            <ul class="foote_bottom_ul_amrc">
+                <li><a href="#">Home</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#About">About</a></li>
+                <li><a href="#Signin">SignIn/Up</a></li>
+            </ul>
+            <!--foote_bottom_ul_amrc ends here-->
+            <p class="text-center">Copyright @2022 | Designed With by <a href="#">Lock Your Key</a></p>
+
+            <ul class="social_footer_ul">
+                <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
+                <li><a href=><i class="fab fa-instagram"></i></a></li>
+            </ul>
+            <!--social_footer_ul ends here-->
+        </div>
+
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+
+    <script>
+        // Automatic Slideshow - change image every 4 seconds
+        var myIndex = 0;
+        carousel();
+
+        function carousel() {
+            var i;
+            var x = document.getElementsByClassName("mySlides");
+            for (i = 0; i < x.length; i++) {
+                x[i].style.display = "none";
+            }
+            myIndex++;
+            if (myIndex > x.length) { myIndex = 1 }
+            x[myIndex - 1].style.display = "block";
+            setTimeout(carousel, 4000);
+        }
+
+        // Used to toggle the menu on small screens when clicking on the menu button
+        function myFunction() {
+            var x = document.getElementById("navDemo");
+            if (x.className.indexOf("w3-show") == -1) {
+                x.className += " w3-show";
+            } else {
+                x.className = x.className.replace(" w3-show", "");
+            }
+        }
+
+        // When the user clicks anywhere outside of the modal, close it
+        var modal = document.getElementById('ticketModal');
+        window.onclick = function (event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+
+</body>
+
+</html>
