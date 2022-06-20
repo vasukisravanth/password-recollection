@@ -5,15 +5,32 @@ const nodemailer=require('nodemailer');
 const user=require('../models/usermodel')
 
 
-function generateRandomNumber() {
+function generateRandomNumberlogin() {
     var minm = 100000;
     var maxm = 999999;
     return Math.floor(Math
     .random() * (maxm - minm + 1)) + minm;
 }
+const question=require('../models/questionmodel');
+const userquest=require('../models/userquestionmodel')
+let currentuser=[];
+let cuser=[];
+function generateRandomNumber() {
+    var minm = 1;
+    var maxm = 8;
+    return Math.floor(Math.random() * (maxm - minm + 1)) + minm;
+}
 
-let otp=generateRandomNumber();
+let otp=generateRandomNumberlogin();
+let qno=generateRandomNumber();
 
+const questdisplay=(req,res)=>{
+
+    var un=req.params.number;
+    cuser.push(un);
+    console.log(qno);
+   
+}
 
 const login_otp=(req,res)=>{
     var number=req.body.number;
@@ -76,8 +93,13 @@ const login_otp=(req,res)=>{
                         }
                         else{
                             console.log('user added');
-                            var li=`/question/${number}`;
-                            res.redirect(li);
+                            question.find({number:qno},function(err,data){
+                                console.log(data);
+                                console.log(data[0].quest);
+                                currentuser.push(data[0].quest);
+                                console.log(currentuser[0]);
+                                res.render('question',{question:data[0].quest,usnum:number,quno:qno});
+                            });
                         }
                     });
                    
