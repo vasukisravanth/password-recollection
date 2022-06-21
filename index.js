@@ -4,7 +4,7 @@ const ejs = require('ejs');
 const path = require('path');
 const mongoose = require("mongoose");
 
-
+const PORT = process.env.PORT || 3000
 
 mongoose.connect("mongodb+srv://vas:sravan@cluster0.n7bw0.mongodb.net/pass", { useNewUrlParser: true });
 const userroutes = require('./routes/userroutes');
