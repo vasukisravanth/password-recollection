@@ -55,7 +55,7 @@ app.use(hintroutes);
 // }
 
 
-app.listen(3000, () => {
+app.listen(PORT, () => {
     console.log('server started');
 })
 
