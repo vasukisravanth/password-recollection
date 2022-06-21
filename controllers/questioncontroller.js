@@ -35,7 +35,7 @@ const answsubmit=(req,res)=>{
     question.find({number:qun},function(err,data){
         const newuser=new userquest({
             phnumber:um,
-            ques:data.quest,
+            ques:data[0].quest,
             answer:answ
     
         });

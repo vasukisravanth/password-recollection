@@ -1,12 +1,31 @@
-
-<form method="post" action="/back/<%=usern%>">
-    <input type="submit" value="back">
-</form>
-<form method="post" action="/editinput/<%=usern%>">
-    <input type="text" name="editedacc" placeholder="account-name">
-    <input type="text" name="editedpass"  placeholder="new password">
-    <input type="submit" value="update">
+<head>
+    <title>Edit form</title>
+    <link href="/styleedit.css" rel="stylesheet" type="text/css">
+</head>
+<body>
 
 
-</form>
 
+    <form method="post" action="/back/<%=usern%>">
+        <input type="submit" value="back">
+    </form>
+    <div class="edit-form">
+        <h1>Edit form</h1>
+        <form method="post" action="/editinput/<%=usern%>">
+            <p>Account name</p>
+            <input type="text" name="editedacc" placeholder="account-name">
+            <p>New value</p>
+            <input type="text" name="editedpass"  placeholder="new password">
+            
+                <input type="submit" value="update">
+            
+          
+        
+        
+        </form>
+
+    </div>
+    
+ 
+
+</body>

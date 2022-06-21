@@ -1,7 +1,21 @@
-<form method="post" action="/question/<%=usnum%>/<%=quno%>">
-<div>  <%=question%> </div>
-<input type="text" name="answer" placeholder="answer">
-<div>
-    <input type="submit" value="submit">
-</div>
-</form>
+<head>
+    <link rel="stylesheet" href="/questionstyle.css" type="text/css">
+</head>
+    <body>
+    
+        <div class="pop">
+        <div class="lyk">
+            <center>
+            <form method="post" action="/question/<%=usnum%>/<%=quno%>">
+            <div class="ques" style="padding-top:170px;">  <p style="font-size: 25px;color: black;"><%=question%></p> <br>
+            <input type="text" size="25px" style="padding: 10px;" name="answer" placeholder="answer" >
+        </div>
+        <br>
+            <div>
+                <input type="submit" style="padding:10px" value="submit">
+            </div>
+            </form>
+        </center>
+            </div>
+        </div>
+    </body>

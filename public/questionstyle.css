@@ -1,0 +1,28 @@
+body {
+    background-image: url("/images/blur.jpg");
+    background-color: #cccccc;
+    background-size: 1540px;
+   }
+   
+  h1{
+    color: white;
+    top:0;
+    margin-left : 1200px;
+    margin-top: -225px;
+  }
+   .lyk p{   
+        font-size: 15px;
+        color:black;
+    }
+    .ques{
+         padding-top: 170px;
+    }
+    .lyk input{
+        size:25px;
+        padding: 10px;
+    }
+    .pop{
+        padding-top: 50px;
+    }
+    
+    

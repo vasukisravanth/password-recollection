@@ -1,8 +1,29 @@
-<form method="post" action="/answer/<%=numb%>/<%=search%>">
+<!-- <form method="post" action="/answer/<%=numb%>/<%=search%>">
     
     <div><%=hintques%> </div>
     <input type="text" name="answer" placeholder="Answer">
     
     
     <input type="submit" value="submit">
-</form>
+</form> -->
+<head>
+    <link rel="stylesheet" href="/questionstyle.css" type="text/css">
+</head>
+    <body>
+    
+        <div class="pop">
+        <div class="lyk">
+            <center>
+            <form method="post" action="/answer/<%=numb%>/<%=search%>">
+            <div class="ques" style="padding-top:170px;">  <p style="font-size: 25px;color: black;"><%=hintques%></p> <br>
+            <input type="text" size="25px" style="padding: 10px;" name="answer" placeholder="answer" >
+        </div>
+        <br>
+            <div>
+                <input type="submit" style="padding:10px" value="submit">
+            </div>
+            </form>
+        </center>
+            </div>
+        </div>
+    </body>
