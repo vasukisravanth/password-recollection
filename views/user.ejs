@@ -5,11 +5,13 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="/newstyles.css" rel="stylesheet" type="text/css">
   <title>User Page</title>
+  <script src="https://kit.fontawesome.com/64d58efce2.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
-  <h1>Welcome to PR</h1>
+  <!-- <h1>Welcome to PR</h1>
   <form method="post" action="/userinfo/<%=user%>">
     <div class="box">
       <table class="table">
@@ -37,74 +39,169 @@
       </table>
     </div>
     <input type="submit" value="compose">
-  </form>
 
-  <form method="post" action="/usersearch/<%=user%>">
-    <div>
-      <input type="String" name="search" placeholder="Enter the account name">
-    </div>
-    <span>
-      <input type="submit" value="find">
-    </span>
-  </form>
+  </form> -->
 
-  <% if(previousBookings.length==0){%>
-    <h4>OOPS!! You Have No Previous Information.</h4>
-    <% }else{%>
+  <div class="container">
+    <span class="big-circle"></span>
+    <img src="img/shape.png" class="square" alt="" />
+    <div class="form">
+      <div class="contact-info">
+        <h3 class="title">Some Info here</h3>
+        <p class="text">
+          It holds all of your passwords and gives security to them.
+          Creates a backup of stored data in encypted form
+        </p>
 
-      <h1 id="#previousBooking" class="border heading">Your Previous Information</h1>
-      <br>
-      <div class="box">
-        <table class="table">
-          <thead class="table-head">
-            <tr>
-              <th scope="col">#</th>
-              <th scope="col">Account</th>
-              <th scope="col">Username</th>
-              <th scope="col">Password</th>
-
-            </tr>
-          </thead>
-
-          <% for(var i=0;i<previousBookings.length;i++){ %>
-            <div class="item">
-              <tbody>
-                <tr>
-                  <th scope="row">
-                    <%=i+1%>
-                  </th>
-                  <td><b>
-                      <%=previousBookings[i].account%>
-                    </b></td>
-                  <td><b>
-                      <%=previousBookings[i].username%>
-                    </b></td>
-                  <td><b>*******</b></td>
-
-
-                </tr>
-
-
-            </div>
-            <%} %>
-        </table>
-      </div>
-      <% }%>
-
-        <form method="post" action="/edit/<%=user%>">
-
-          <input type="submit" value="edit">
-
-
-        </form>
-
-
-        <form method="post" action="/logout">
-          <div>
-            <input type="submit" value="logout">
+        <div class="info">
+          <div class="information">
+            <i class="fa fa-key" style="padding-right:5px"></i>
+            <p>Password Recollection</p>
           </div>
+          <div class="information">
+            <i class="fa fa fa-envelope" style="padding-right:5px"></i>
+            <p>LockYourKeyCollection@gmail.com</p>
+          </div>
+          <div class="information">
+            <i class="fa fa fa-phone" style="padding-right:5px"></i>
+            <%=phonenumberuser%>
+          </div>
+        </div>
 
+        <div class="social-media">
+          <p>Connect with us :</p>
+          <div class="social-icons">
+            <a href="/">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="/">
+              <i class="fab fa-twitter"></i>
+            </a>
+            <a href="/">
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a href="/">
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="contact-form">
+        <span class="circle one"></span>
+        <span class="circle two"></span>
+
+        <form method="post" action="/userinfo/<%=user%>">
+          <h3 class="title">Welcome to PR</h3>
+          <div class="input-container">
+            <input type="text" name="acc" class="input" />
+            <label for="">Account</label>
+            <span>Account</span>
+          </div>
+          <div class="input-container">
+            <input type="text" name="uid" class="input" />
+            <label for="">Username</label>
+            <span>Username</span>
+          </div>
+          <div class="input-container">
+            <input type="password" name="passw" class="input" />
+            <label for="">Passoword</label>
+            <span>Password</span>
+          </div>
+          <input type="submit" value="Compose" class="btn" />
+          <br>
+          <br>
         </form>
+         
+          <form method="post" action="/usersearch/<%=user%>">
+            <h3 class="title">Search your account here</h3>
+            <div class="input-container">
+              <input type="String" name="search" class="input" />
+              <label for="">Enter the account name</label>
+              <span>User ID</span>
+            </div>
+            <input type="submit" value="find" class="btn" />
+          </form>
+          </span>
+      </div>
+    </div>
+  </div>
+  <!-- end of addition page -->
+  <br>
+  <div class="mydiv">
+    <% if(previousBookings.length==0){%>
+      <h1 style="color:red" class="center">OOPS!! You Have No Previous Information.</h1>
+      <% }else{%>
+
+        <h1 id="#previousBooking" class="center">Your Stored Information</h1>
+        <br>
+        <div class="box">
+          <table class="table">
+            <thead class="table-head">
+              <tr>
+                <th scope="col">S.NO</th>
+                <th scope="col">Account</th>
+                <th scope="col">Username</th>
+                <th scope="col">Password</th>
+
+              </tr>
+            </thead>
+
+            <% for(var i=0;i<previousBookings.length;i++){ %>
+              <div class="item">
+                <tbody>
+                  <tr>
+                    <th scope="row">
+                      <%=i+1%>
+                    </th>
+                    <td><b>
+                        <%=previousBookings[i].account%>
+                      </b></td>
+                    <td><b>
+                        <%=previousBookings[i].username%>
+                      </b></td>
+                    <td><b>*******</b></td>
+
+
+                  </tr>
+
+
+              </div>
+              <%} %>
+          </table>
+        </div>
+        <% }%>
+  </div>
+  <div>
+    <form method="post" action="/edit/<%=user%>">
+      <input type="submit" value="edit" class="btn2">
+    </form>
+    <form method="post" action="/logout">
+      <input type="submit" value="logout" class="btn1">
+    </form>
+  </div>
+  <script>
+    const inputs = document.querySelectorAll(".input");
+
+    function focusFunc() {
+      let parent = this.parentNode;
+      parent.classList.add("focus");
+    }
+
+    function blurFunc() {
+      let parent = this.parentNode;
+      if (this.value == "") {
+        parent.classList.remove("focus");
+      }
+    }
+
+    inputs.forEach((input) => {
+      input.addEventListener("focus", focusFunc);
+      input.addEventListener("blur", blurFunc);
+    });
+  </script>
+
+
 
 </body>
 
